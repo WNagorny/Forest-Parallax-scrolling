@@ -7,6 +7,7 @@
 :root {
 	--index: (1vw + 1vh);
 	--text: #e7e7e0;
+   --transition: transform .75s cubic-bezier(.075, 0.5, 0, 1);
 }
 
 @font-face {
@@ -45,6 +46,7 @@ body {
 	position: absolute;
 	background-size: cover;
 	background-position: center;
+   transition: var(--transition);
 	will-change: transform;
 	z-index: 2;
 }
@@ -52,13 +54,17 @@ body {
 .layers__base {
 	z-index: 0;
 	transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+   transition: var(--transition);
 }
 
 .layers__middle {
 	transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+   transition: var(--transition);
+
 }
 .layers__front {
 	transform: translate3d(0, calc(var(--scrollTop) / 5), 0);
+   transition: var(--transition);
 }
 
 .layer__header {
@@ -67,6 +73,7 @@ body {
 	font-weight: 900;
 	text-shadow: 0 0 15px #9d822b;
 	transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+   transition: var(--transition);
 	will-change: transform;
 	z-index: 1;
 }
@@ -106,6 +113,8 @@ body {
 	align-items: center;
 	justify-content: center;
 	--main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+   transition: var(--transition);
+
 }
 
 .main-article__header {
@@ -113,6 +122,7 @@ body {
 	font-size: calc(var(--index) * 1.8);
 	letter-spacing: calc(var(--index) / 7.5);
 	transform: var(--main-article-transform);
+   transition: var(--transition);
 	will-change: transform;
 }
 
@@ -121,7 +131,12 @@ body {
 	font-size: calc(var(--index) * 0.9);
 	margin-top: calc(var(--index) / 1.25);
 	transform: var(--main-article-transform);
+   transition: var(--transition);
 	will-change: transform;
+}
+
+.content{
+   will-change: transorm;
 }
 
 .copy {
